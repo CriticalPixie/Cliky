@@ -1,0 +1,2447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliky | Accesorios Personalizados - Clickers, Cordones y Charms</title>
+  <meta name="description" content="Página oficial de pedidos de Cliky. Clickers, cordones con nudos decorativos y charms para universitarios. Presiona. Relájate. Repite.">
+
+  <!-- Estilos embebidos para autonomía total y carga ultra rápida sin dependencias externas -->
+  <style>
+    /* ========================================================
+       VARIABLES DE COLOR Y DISEÑO (CLIKY PALETTE)
+       ======================================================== */
+    :root {
+      --primary-yellow: #FFCC00;
+      --primary-yellow-hover: #E6B800;
+      --primary-yellow-light: #FFF8D6;
+      --bg-white: #FFFFFF;
+      --bg-canvas: #FAFAFC;
+      --bg-card: #FFFFFF;
+      --pastel-pink: #FCE7F3;
+      --pastel-pink-text: #9D174D;
+      --pastel-lilac: #F3E8FF;
+      --pastel-lilac-text: #6B21A8;
+      --pastel-blue: #E0F2FE;
+      --pastel-blue-text: #0369A1;
+      --text-main: #1E293B;
+      --text-muted: #64748B;
+      --text-light: #94A3B8;
+      --border-soft: #E2E8F0;
+      --border-focus: #FFCC00;
+      --success: #10B981;
+      --success-light: #ECFDF5;
+      --warning: #F59E0B;
+      --warning-light: #FFFBEB;
+      --danger: #EF4444;
+      --danger-light: #FEF2F2;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.09);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+      --transition: all 0.22s ease-in-out;
+    }
+
+    /* ========================================================
+       RESET Y BASE
+       ======================================================== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-main);
+      background-color: var(--bg-canvas);
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img, svg {
+      vertical-align: middle;
+      max-width: 100%;
+    }
+
+    /* ========================================================
+       BARRA DE ESTADO DEL SISTEMA (CONEXIÓN / DEMO)
+       ======================================================== */
+    .status-banner {
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .status-badge-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--warning);
+      display: inline-block;
+    }
+
+    .status-dot.connected {
+      background: var(--success);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
+    }
+
+    .status-btn-config {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #FFF;
+      font-size: 0.75rem;
+      padding: 2px 10px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .status-btn-config:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ========================================================
+       ENCABEZADO (HEADER)
+       ======================================================== */
+    header.cliky-header {
+      background-color: var(--bg-white);
+      border-bottom: 1px solid var(--border-soft);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo-badge {
+      background-color: var(--primary-yellow);
+      color: #000;
+      font-weight: 900;
+      font-size: 1.15rem;
+      letter-spacing: -0.5px;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 10px rgba(255, 204, 0, 0.35);
+    }
+
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .brand-slogan {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: var(--transition);
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--text-main);
+      background-color: var(--primary-yellow-light);
+    }
+
+    .cart-btn-header {
+      background-color: var(--text-main);
+      color: #FFF;
+      border: none;
+      padding: 10px 18px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+      position: relative;
+    }
+
+    .cart-btn-header:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.25);
+    }
+
+    .cart-badge {
+      background-color: var(--primary-yellow);
+      color: #000;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: var(--radius-full);
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /* ========================================================
+       PORTADA (HERO)
+       ======================================================== */
+    .hero-section {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+      padding: 56px 20px 40px;
+      text-align: center;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .hero-container {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--primary-yellow-light);
+      border: 1px solid rgba(255, 204, 0, 0.4);
+      color: #855800;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text-main);
+      margin-bottom: 16px;
+    }
+
+    .hero-title span.accent-text {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-title span.accent-text::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 6px;
+      width: 100%;
+      height: 10px;
+      background-color: var(--primary-yellow);
+      opacity: 0.55;
+      z-index: -1;
+      border-radius: 4px;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 660px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background-color: var(--primary-yellow);
+      color: #000;
+      border: none;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(255, 204, 0, 0.35);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-yellow-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 204, 0, 0.45);
+    }
+
+    .btn-secondary {
+      background-color: #FFF;
+      color: var(--text-main);
+      border: 1px solid var(--border-soft);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 24px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .btn-secondary:hover {
+      background-color: #F1F5F9;
+      border-color: #CBD5E1;
+    }
+
+    .hero-highlights {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+
+    .hero-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* ========================================================
+       CONTENEDOR PRINCIPAL Y FILTROS
+       ======================================================== */
+    main.main-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+      width: 100%;
+      flex: 1;
+    }
+
+    .section-header {
+      margin-bottom: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .section-title-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text-main);
+    }
+
+    .section-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* Pestañas de categorías */
+    .category-tabs {
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      scrollbar-width: none;
+    }
+
+    .category-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .tab-btn {
+      background-color: #FFF;
+      border: 1px solid var(--border-soft);
+      padding: 10px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tab-btn:hover {
+      border-color: #CBD5E1;
+      color: var(--text-main);
+    }
+
+    .tab-btn.active {
+      background-color: var(--text-main);
+      color: #FFF;
+      border-color: var(--text-main);
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ========================================================
+       GRID DE PRODUCTOS Y TARJETAS
+       ======================================================== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 24px;
+    }
+
+    .product-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: #CBD5E1;
+    }
+
+    /* Ilustración / Portada visual del producto */
+    .product-visual-wrap {
+      width: 100%;
+      height: 200px;
+      background: #F8FAFC;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .product-visual-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-svg-illustration {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .product-category-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    }
+
+    .tag-clickers {
+      background-color: var(--pastel-yellow, #FEF08A);
+      color: #854D0E;
+    }
+
+    .tag-cordones {
+      background-color: var(--pastel-pink);
+      color: var(--pastel-pink-text);
+    }
+
+    .tag-charms {
+      background-color: var(--pastel-lilac);
+      color: var(--pastel-lilac-text);
+    }
+
+    .product-content {
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .product-variant-badge {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--pastel-blue-text);
+      background-color: var(--pastel-blue);
+      padding: 2px 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+      align-self: flex-start;
+    }
+
+    .product-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .product-meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 14px;
+      padding-top: 10px;
+      border-top: 1px dashed var(--border-soft);
+    }
+
+    .product-price-label {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .product-price {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .product-stock-status {
+      font-size: 0.78rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 14px;
+    }
+
+    .stock-dot-status {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .stock-available .stock-dot-status { background: var(--success); }
+    .stock-available { color: #047857; }
+
+    .stock-demo .stock-dot-status { background: var(--warning); }
+    .stock-demo { color: #B45309; }
+
+    .stock-out .stock-dot-status { background: var(--danger); }
+    .stock-out { color: var(--danger); }
+
+    /* Controles de agregar */
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .qty-picker {
+      display: flex;
+      align-items: center;
+      background: #F1F5F9;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+    }
+
+    .qty-btn {
+      background: transparent;
+      border: none;
+      width: 32px;
+      height: 38px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--text-main);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+
+    .qty-btn:hover {
+      background: #E2E8F0;
+    }
+
+    .qty-input {
+      width: 36px;
+      text-align: center;
+      border: none;
+      background: transparent;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      -moz-appearance: textfield;
+    }
+
+    .qty-input::-webkit-outer-spin-button,
+    .qty-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .btn-add-cart {
+      flex: 1;
+      background-color: var(--primary-yellow);
+      color: #000;
+      border: none;
+      font-weight: 800;
+      font-size: 0.92rem;
+      height: 40px;
+      padding: 0 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .btn-add-cart:hover:not(:disabled) {
+      background-color: var(--primary-yellow-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-add-cart:disabled {
+      background-color: #E2E8F0;
+      color: #94A3B8;
+      cursor: not-allowed;
+    }
+
+    /* ========================================================
+       MODAL Y DRAWER DE CARRITO / CHECKOUT
+       ======================================================== */
+    .drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(3px);
+      z-index: 200;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .drawer-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 480px;
+      height: 100%;
+      background-color: #FFF;
+      z-index: 201;
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border-soft);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FAFAFC;
+    }
+
+    .drawer-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .drawer-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .drawer-close-btn {
+      background: transparent;
+      border: none;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      transition: background 0.15s;
+    }
+
+    .drawer-close-btn:hover {
+      background: #E2E8F0;
+      color: var(--text-main);
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Lista de ítems en carrito */
+    .cart-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .cart-item {
+      background: #FFF;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cart-item-img {
+      width: 54px;
+      height: 54px;
+      border-radius: 8px;
+      background: #F1F5F9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cart-item-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cart-item-name {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cart-item-variant {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .cart-item-price-unit {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    .cart-item-subtotal {
+      font-weight: 800;
+      font-size: 0.95rem;
+      color: var(--text-main);
+      text-align: right;
+    }
+
+    .cart-item-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .btn-remove-item {
+      background: none;
+      border: none;
+      color: var(--text-light);
+      cursor: pointer;
+      font-size: 0.75rem;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    .btn-remove-item:hover {
+      color: var(--danger);
+    }
+
+    .cart-empty-state {
+      text-align: center;
+      padding: 48px 20px;
+      color: var(--text-muted);
+    }
+
+    .cart-empty-icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      color: var(--primary-yellow);
+    }
+
+    /* Ejemplo de validación rápida */
+    .validation-example-box {
+      background-color: #FEF9C3;
+      border: 1px dashed #CA8A04;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      color: #713F12;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .btn-load-example {
+      background-color: #FACC15;
+      border: none;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #000;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      align-self: flex-start;
+      margin-top: 4px;
+      transition: var(--transition);
+    }
+
+    .btn-load-example:hover {
+      background-color: #EAB308;
+    }
+
+    /* Formulario de Pedido */
+    .checkout-form-section {
+      border-top: 1px solid var(--border-soft);
+      padding-top: 16px;
+    }
+
+    .form-section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: var(--text-main);
+    }
+
+    .form-label span.req {
+      color: var(--danger);
+    }
+
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      font-size: 0.92rem;
+      color: var(--text-main);
+      background: #FFF;
+      transition: border 0.15s;
+    }
+
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary-yellow);
+      box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.2);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 60px;
+    }
+
+    .form-checkbox-label {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .form-checkbox-label input[type="checkbox"] {
+      margin-top: 3px;
+      accent-color: #000;
+      width: 16px;
+      height: 16px;
+    }
+
+    .drawer-footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 18px 20px;
+      background: #FAFAFC;
+    }
+
+    .cart-summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 16px;
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--text-main);
+      padding-top: 6px;
+      border-top: 1px dashed var(--border-soft);
+    }
+
+    .cart-total-amount {
+      font-size: 1.6rem;
+      color: #000;
+    }
+
+    .btn-confirm-order {
+      width: 100%;
+      background-color: var(--primary-yellow);
+      color: #000;
+      border: none;
+      font-size: 1.05rem;
+      font-weight: 800;
+      padding: 14px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: var(--transition);
+      box-shadow: 0 4px 14px rgba(255, 204, 0, 0.35);
+    }
+
+    .btn-confirm-order:hover:not(:disabled) {
+      background-color: var(--primary-yellow-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-confirm-order:disabled {
+      background: #E2E8F0;
+      color: #94A3B8;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
+    /* ========================================================
+       MODAL DE CONFIRMACIÓN Y WHATSAPP
+       ======================================================== */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background-color: #FFF;
+      border-radius: var(--radius-md);
+      max-width: 520px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-lg);
+      transform: scale(0.95);
+      transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+
+    .modal-overlay.open .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-banner-success {
+      background: linear-gradient(135deg, #FFCC00 0%, #F59E0B 100%);
+      color: #000;
+      padding: 28px 24px 20px;
+      text-align: center;
+      border-top-left-radius: var(--radius-md);
+      border-top-right-radius: var(--radius-md);
+    }
+
+    .modal-badge-order-code {
+      display: inline-block;
+      background: #000;
+      color: #FFF;
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 4px 16px;
+      border-radius: var(--radius-full);
+      margin-bottom: 8px;
+    }
+
+    .modal-timer-box {
+      background: rgba(255, 255, 255, 0.9);
+      color: #854D0E;
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-top: 10px;
+    }
+
+    .modal-body {
+      padding: 24px;
+    }
+
+    .order-breakdown-box {
+      background: #F8FAFC;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-sm);
+      padding: 14px;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
+    }
+
+    .order-breakdown-title {
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .order-breakdown-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 6px;
+      color: var(--text-muted);
+    }
+
+    .order-breakdown-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      color: var(--text-main);
+      font-size: 1rem;
+      padding-top: 8px;
+      border-top: 1px dashed var(--border-soft);
+      margin-top: 8px;
+    }
+
+    .whatsapp-notice-card {
+      background-color: #ECFDF5;
+      border: 1px solid #A7F3D0;
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      font-size: 0.84rem;
+      color: #065F46;
+      line-height: 1.45;
+    }
+
+    .btn-whatsapp-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #25D366;
+      color: #FFF;
+      font-weight: 800;
+      font-size: 1.05rem;
+      padding: 15px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+      transition: var(--transition);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-whatsapp-action:hover {
+      background-color: #20BD5A;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    .btn-secondary-full {
+      width: 100%;
+      margin-top: 10px;
+      background: transparent;
+      border: 1px solid var(--border-soft);
+      color: var(--text-muted);
+      font-weight: 700;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+
+    .btn-secondary-full:hover {
+      background: #F1F5F9;
+      color: var(--text-main);
+    }
+
+    /* Modal de configuración de backend */
+    .config-modal-body {
+      padding: 24px;
+    }
+
+    /* ========================================================
+       FOOTER
+       ======================================================== */
+    footer.cliky-footer {
+      background-color: #FFF;
+      border-top: 1px solid var(--border-soft);
+      padding: 40px 20px 24px;
+      margin-top: auto;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-soft);
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .footer-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    /* Toast notification */
+    .toast-notification {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background-color: #0F172A;
+      color: #FFF;
+      padding: 12px 24px;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 500;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s;
+      opacity: 0;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .toast-notification.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    /* ========================================================
+       RESPONSIVE DESIGN (MÓVIL Y TABLET)
+       ======================================================== */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.1rem;
+      }
+
+      .nav-links {
+        display: none; /* Mantenemos solo el carrito en la cabecera en móvil */
+      }
+
+      .products-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
+      }
+
+      .cart-drawer {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========================================================
+       BARRA DE ESTADO DEL SISTEMA
+       ======================================================== -->
+  <div class="status-banner" id="statusBanner">
+    <div class="status-badge-indicator" id="statusIndicator">
+      <span class="status-dot" id="statusDot"></span>
+      <span id="statusText">Comprobando conexión con inventario...</span>
+    </div>
+    <div>
+      <button class="status-btn-config" onclick="abrirModalConfig()">
+        ⚙️ Configurar Backend (Google Apps Script)
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       ENCABEZADO DE CLIKY
+       ======================================================== -->
+  <header class="cliky-header">
+    <div class="header-container">
+      <div class="brand-group">
+        <div class="brand-logo-wrap">
+          <div class="brand-logo-badge">C</div>
+          <span class="brand-title">Cliky</span>
+        </div>
+        <span class="brand-slogan">Presiona. Relájate. Repite</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#catalogo" class="nav-link" onclick="filtrarCategoria('todos')">Todos</a>
+        <a href="#catalogo" class="nav-link" onclick="filtrarCategoria('Clickers')">Clickers</a>
+        <a href="#catalogo" class="nav-link" onclick="filtrarCategoria('Cordones')">Cordones</a>
+        <a href="#catalogo" class="nav-link" onclick="filtrarCategoria('Charms')">Charms</a>
+      </nav>
+
+      <button class="cart-btn-header" onclick="abrirCarrito()" aria-label="Ver carrito de compras">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span>Pedido</span>
+        <span class="cart-badge" id="cartBadgeCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================
+       PORTADA (HERO)
+       ======================================================== -->
+  <section class="hero-section">
+    <div class="hero-container">
+      <div class="hero-tag">
+        ✨ Accesorios exclusivos para universitarios
+      </div>
+      <h1 class="hero-title">
+        Tus accesorios, <br>
+        <span class="accent-text">tu estilo, tu combinación</span>
+      </h1>
+      <p class="hero-desc">
+        Elige tus clickers, combina tus cordones y agrega tus charms favoritos. Arma tu pedido fácilmente y coordina por WhatsApp.
+      </p>
+      <div class="hero-cta-group">
+        <a href="#catalogo" class="btn-primary">
+          <span>Ver catálogo</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+        <button class="btn-secondary" onclick="probarCalculoEjemplo()">
+          <span>Cargar ejemplo S/ 22.50</span>
+        </button>
+      </div>
+
+      <div class="hero-highlights">
+        <div class="hero-highlight-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Precios reales en soles (S/)</span>
+        </div>
+        <div class="hero-highlight-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Reserva temporal de 15 minutos</span>
+        </div>
+        <div class="hero-highlight-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>Coordinación directa al WhatsApp 51923293886</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       CATÁLOGO OFICIAL DE CLIKY
+       ======================================================== -->
+  <main class="main-content" id="catalogo">
+    <div class="section-header">
+      <div class="section-title-wrap">
+        <div>
+          <h2 class="section-title">Catálogo Oficial</h2>
+          <p class="section-subtitle">Selecciona tus clickers, nudos de cordones y modelos de charms.</p>
+        </div>
+      </div>
+
+      <!-- Filtros por Categoría -->
+      <div class="category-tabs">
+        <button class="tab-btn active" id="tab-todos" onclick="filtrarCategoria('todos')">
+          Todos los artículos
+        </button>
+        <button class="tab-btn" id="tab-Clickers" onclick="filtrarCategoria('Clickers')">
+          🟡 Clickers (4 tamaños)
+        </button>
+        <button class="tab-btn" id="tab-Cordones" onclick="filtrarCategoria('Cordones')">
+          🎀 Cordones (4 nudos)
+        </button>
+        <button class="tab-btn" id="tab-Charms" onclick="filtrarCategoria('Charms')">
+          ⭐ Charms (2 modelos)
+        </button>
+      </div>
+    </div>
+
+    <!-- Contenedor dinámico de productos -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Los 8 productos y variantes se renderizan aquí dinámicamente mediante JS -->
+    </div>
+  </main>
+
+  <!-- ========================================================
+       DRAWER LATERAL: CARRITO Y FORMULARIO DE RESERVA
+       ======================================================== -->
+  <div class="drawer-overlay" id="cartOverlay" onclick="cerrarCarrito()"></div>
+
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Carrito de pedidos">
+    <div class="drawer-header">
+      <div class="drawer-title-wrap">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <h3 class="drawer-title">Tu Pedido Cliky</h3>
+      </div>
+      <button class="drawer-close-btn" onclick="cerrarCarrito()" aria-label="Cerrar carrito">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Ejemplo de validación para el usuario -->
+      <div class="validation-example-box">
+        <strong>💡 ¿Quieres probar el cálculo de ejemplo de S/ 22.50?</strong>
+        <span>1 clicker T2 + 2 cordones Snake + 1 cordón Mariposa + 2 charms M1 + 1 charm M2.</span>
+        <button class="btn-load-example" onclick="probarCalculoEjemplo()">Cargar automáticamente</button>
+      </div>
+
+      <!-- Lista de productos añadidos -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Renderizado dinámico -->
+      </div>
+
+      <!-- Formulario de datos para la reserva -->
+      <div class="checkout-form-section" id="checkoutSection" style="display: none;">
+        <h4 class="form-section-title">Datos para coordinar tu reserva</h4>
+
+        <div class="form-group">
+          <label class="form-label" for="clienteNombre">Nombre completo <span class="req">*</span></label>
+          <input type="text" id="clienteNombre" class="form-input" placeholder="Ej. Camila Morales" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clienteTelefono">Número de celular WhatsApp <span class="req">*</span></label>
+          <input type="tel" id="clienteTelefono" class="form-input" placeholder="Ej. 923293886" maxlength="12" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="clienteObservaciones">Indicaciones adicionales (opcional)</label>
+          <textarea id="clienteObservaciones" class="form-textarea" placeholder="¿Algún detalle para coordinar la entrega o colores preferidos?"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-checkbox-label">
+            <input type="checkbox" id="checkTerminos" required>
+            <span>Acepto las condiciones de reserva temporal (15 min) y autorizo el uso de mis datos exclusivamente para coordinar el pago por WhatsApp. Cliky no solicita DNI ni claves bancarias.</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-summary-row">
+        <span>Artículos en carrito:</span>
+        <span id="summaryTotalItems">0 unidades</span>
+      </div>
+      <div class="cart-total-row">
+        <span>Total del pedido:</span>
+        <span class="cart-total-amount" id="summaryTotalAmount">S/ 0.00</span>
+      </div>
+
+      <button class="btn-confirm-order" id="btnConfirmarPedido" onclick="ejecutarReserva()" disabled>
+        <span>Confirmar y Reservar Stock</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ========================================================
+       MODAL: RESERVA CONFIRMADA Y ENLACE DE WHATSAPP
+       ======================================================== -->
+  <div class="modal-overlay" id="orderModal">
+    <div class="modal-content">
+      <div class="modal-banner-success">
+        <span class="modal-badge-order-code" id="modalCodigoPedido">CLK-XXXXXX</span>
+        <h3 style="font-size: 1.4rem; font-weight: 800;">¡Reserva Creada Exitosamente!</h3>
+        <p style="font-size: 0.9rem; margin-top: 4px;">Tu stock ha sido apartado temporalmente en Cliky.</p>
+        <div class="modal-timer-box">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          <span id="modalTimerCountdown">Válida por 15:00 min</span>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="order-breakdown-box">
+          <div class="order-breakdown-title">
+            <span>Resumen del Pedido</span>
+            <span id="modalEstadoText" style="color: #D97706; font-size: 0.8rem;">PENDIENTE DE PAGO</span>
+          </div>
+          <div id="modalItemsBreakdown">
+            <!-- Detalle por producto -->
+          </div>
+          <div class="order-breakdown-total">
+            <span>TOTAL:</span>
+            <span id="modalTotalAmount">S/ 0.00</span>
+          </div>
+        </div>
+
+        <div class="whatsapp-notice-card">
+          <strong>📲 Pasos finales para asegurar tu pedido:</strong><br>
+          1. Pulsa el botón verde <strong>"Enviar pedido por WhatsApp"</strong>.<br>
+          2. Se abrirá la conversación oficial de Cliky (<strong>51923293886</strong>) con tu mensaje listo.<br>
+          3. <strong>IMPORTANTE:</strong> Debes pulsar <strong>"Enviar" dentro de WhatsApp</strong> para que recibamos tu solicitud y coordinemos el pago.
+        </div>
+
+        <a href="#" id="modalBtnWhatsApp" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-action">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.976.533 2.026.828 3.15.828 3.182 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.77-5.769-5.77zm0 10.428c-.997 0-1.954-.287-2.779-.817l-.2-.128-1.545.405.413-1.508-.135-.215c-.569-.904-.87-1.955-.87-3.033 0-2.88 2.344-5.223 5.226-5.223 2.88 0 5.225 2.343 5.226 5.223-.001 2.881-2.345 5.224-5.226 5.224zm-6.031-16.6c-5.522 0-10 4.478-10 10 0 1.772.463 3.491 1.342 5.013l-1.423 5.201 5.32-1.396c1.47.801 3.131 1.222 4.832 1.222 5.522 0 10-4.478 10-10 0-5.522-4.478-10-10-10z"/>
+          </svg>
+          <span>Enviar pedido por WhatsApp</span>
+        </a>
+
+        <button class="btn-secondary-full" onclick="cerrarModalPedido()">
+          Cerrar y seguir navegando
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       MODAL DE CONFIGURACIÓN DE BACKEND
+       ======================================================== -->
+  <div class="modal-overlay" id="configModal">
+    <div class="modal-content">
+      <div style="padding: 20px; border-bottom: 1px solid var(--border-soft); display: flex; justify-content: space-between; align-items: center;">
+        <h3 style="font-weight: 800;">Conectar Google Sheets & Apps Script</h3>
+        <button class="drawer-close-btn" onclick="cerrarModalConfig()">✕</button>
+      </div>
+      <div class="config-modal-body">
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 16px;">
+          Pega aquí la URL de la aplicación web publicada desde Google Apps Script (Web App URL).
+        </p>
+        <div class="form-group">
+          <label class="form-label" for="inputBackendUrl">URL del Backend (Google Apps Script):</label>
+          <input type="url" id="inputBackendUrl" class="form-input" placeholder="https://script.google.com/macros/s/.../exec">
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 18px;">
+          <button class="btn-primary" style="flex: 1;" onclick="guardarUrlBackend()">Guardar y Conectar</button>
+          <button class="btn-secondary" onclick="restablecerModoDemo()">Usar Modo Demo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       PIE DE PÁGINA (FOOTER)
+       ======================================================== -->
+  <footer class="cliky-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="brand-group">
+          <div class="brand-logo-wrap">
+            <div class="brand-logo-badge">C</div>
+            <span class="brand-title">Cliky</span>
+          </div>
+          <span class="brand-slogan">Presiona. Relájate. Repite</span>
+        </div>
+        <div>
+          <a href="https://wa.me/51923293886" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+            <span>WhatsApp oficial de pedidos: +51 923 293 886</span>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Cliky — Clickers, Cordones y Charms para universitarios.</span>
+        <span>Precios oficiales en soles (S/). Todos los derechos reservados.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notificación Toast flotante -->
+  <div class="toast-notification" id="toast">
+    <span id="toastMsg">Mensaje</span>
+  </div>
+
+  <!-- ========================================================
+       LÓGICA JAVASCRIPT PRINCIPAL
+       ======================================================== -->
+  <script>
+    /**
+     * ========================================================
+     * CONFIGURACIÓN DEL SISTEMA
+     * ========================================================
+     */
+    // Reemplaza esta variable con la URL de tu Web App de Google Apps Script publicada:
+    const API_URL = "PEGAR_AQUI_URL_DEL_BACKEND";
+
+    const WHATSAPP_NUMERO = "51923293886";
+    const DURACION_RESERVA_MINUTOS = 15;
+
+    /**
+     * ========================================================
+     * CATÁLOGO OFICIAL INICIAL DE CLIKY (PRECIOS EXACTOS EN S/)
+     * ========================================================
+     */
+    const CATALOGO_OFICIAL = [
+      // CATEGORÍA A: CLICKERS
+      {
+        id_variante: 'CLK-T1',
+        categoria: 'Clickers',
+        producto: 'Clicker tamaño 1',
+        variante: 'Tamaño 1',
+        precio: 4.00,
+        descripcion: 'Clicker compacto de bolsillo con pulsación suave y sonido satisfactorio.',
+        stock_demo: 15,
+        icono_svg: 'clicker'
+      },
+      {
+        id_variante: 'CLK-T2',
+        categoria: 'Clickers',
+        producto: 'Clicker tamaño 2',
+        variante: 'Tamaño 2',
+        precio: 8.00,
+        descripcion: 'Clicker de tamaño mediano con agarre cómodo y respuesta táctil ideal.',
+        stock_demo: 15,
+        icono_svg: 'clicker'
+      },
+      {
+        id_variante: 'CLK-T3',
+        categoria: 'Clickers',
+        producto: 'Clicker tamaño 3',
+        variante: 'Tamaño 3',
+        precio: 12.00,
+        descripcion: 'Clicker tamaño grande con pulsación firme para aliviar la tensión.',
+        stock_demo: 12,
+        icono_svg: 'clicker'
+      },
+      {
+        id_variante: 'CLK-T4',
+        categoria: 'Clickers',
+        producto: 'Clicker tamaño 4',
+        variante: 'Tamaño 4',
+        precio: 14.00,
+        descripcion: 'Clicker de máxima dimensión, agarre ergonómico y máxima durabilidad.',
+        stock_demo: 10,
+        icono_svg: 'clicker'
+      },
+
+      // CATEGORÍA B: CORDONES
+      {
+        id_variante: 'CRD-SMP-SNK',
+        categoria: 'Cordones',
+        producto: 'Cordón nudo simple',
+        variante: 'Snake',
+        precio: 3.00,
+        descripcion: 'Cordón decorativo tejido artesanalmente en nudo simple tipo Snake.',
+        stock_demo: 20,
+        icono_svg: 'cordon'
+      },
+      {
+        id_variante: 'CRD-SMP-BRL',
+        categoria: 'Cordones',
+        producto: 'Cordón nudo simple',
+        variante: 'Barril',
+        precio: 3.00,
+        descripcion: 'Cordón decorativo tejido artesanalmente en nudo simple tipo Barril.',
+        stock_demo: 20,
+        icono_svg: 'cordon'
+      },
+      {
+        id_variante: 'CRD-CMP-SRT',
+        categoria: 'Cordones',
+        producto: 'Cordón nudo complejo',
+        variante: 'Suerte',
+        precio: 3.50,
+        descripcion: 'Cordón decorativo elaborado con tramado en nudo complejo de la Suerte.',
+        stock_demo: 15,
+        icono_svg: 'cordon'
+      },
+      {
+        id_variante: 'CRD-CMP-MRP',
+        categoria: 'Cordones',
+        producto: 'Cordón nudo complejo',
+        variante: 'Mariposa',
+        precio: 3.50,
+        descripcion: 'Cordón decorativo artesanal con diseño en nudo complejo Mariposa.',
+        stock_demo: 15,
+        icono_svg: 'cordon'
+      },
+
+      // CATEGORÍA C: CHARMS
+      {
+        id_variante: 'CHM-M1',
+        categoria: 'Charms',
+        producto: 'Charm modelo 1',
+        variante: 'Modelo 1',
+        precio: 1.50,
+        descripcion: 'Accesorio charm independiente modelo 1 para personalizar tu combinación.',
+        stock_demo: 25,
+        icono_svg: 'charm'
+      },
+      {
+        id_variante: 'CHM-M2',
+        categoria: 'Charms',
+        producto: 'Charm modelo 2',
+        variante: 'Modelo 2',
+        precio: 2.00,
+        descripcion: 'Accesorio charm independiente modelo 2 con diseño y textura especial.',
+        stock_demo: 25,
+        icono_svg: 'charm'
+      }
+    ];
+
+    /**
+     * ========================================================
+     * ESTADO DE LA APLICACIÓN
+     * ========================================================
+     */
+    let catalogoActual = [...CATALOGO_OFICIAL];
+    let categoriaFiltro = 'todos';
+    let carrito = {}; // Estructura: { 'CLK-T2': { item, cantidad } }
+    let backendConectado = false;
+    let backendUrlActiva = localStorage.getItem('cliky_backend_url') || (API_URL !== "PEGAR_AQUI_URL_DEL_BACKEND" ? API_URL : "");
+    let countdownInterval = null;
+
+    /**
+     * ========================================================
+     * INICIALIZACIÓN
+     * ========================================================
+     */
+    document.addEventListener('DOMContentLoaded', () => {
+      verificarConexionBackend();
+      renderizarCatalogo();
+      actualizarCarritoUI();
+    });
+
+    /**
+     * ========================================================
+     * VERIFICACIÓN Y CARGA DE INVENTARIO DESDE GOOGLE SHEETS
+     * ========================================================
+     */
+    async function verificarConexionBackend() {
+      const statusDot = document.getElementById('statusDot');
+      const statusText = document.getElementById('statusText');
+
+      if (!backendUrlActiva || backendUrlActiva.trim() === "" || backendUrlActiva.includes("PEGAR_AQUI")) {
+        backendConectado = false;
+        statusDot.className = 'status-dot';
+        statusText.innerHTML = '<strong>Modo Demostración:</strong> Catálogo oficial cargado. Conecta Google Sheets para reservar stock real.';
+        return;
+      }
+
+      try {
+        statusText.innerText = 'Sincronizando inventario con Google Sheets...';
+        const urlFetch = `${backendUrlActiva}?action=getCatalog&t=${Date.now()}`;
+        const resp = await fetch(urlFetch);
+        const data = await resp.json();
+
+        if (data && data.success && Array.isArray(data.catalogo)) {
+          backendConectado = true;
+          statusDot.className = 'status-dot connected';
+          statusText.innerHTML = `<strong>Conectado a Google Sheets:</strong> Inventario y disponibilidad en tiempo real sincronizados.`;
+          
+          // Actualizar catálogo local con existencias y precios del servidor
+          sincronizarCatalogoServidor(data.catalogo);
+          renderizarCatalogo();
+          mostrarToast('Inventario de Cliky actualizado en tiempo real');
+        } else {
+          throw new Error('Respuesta inválida');
+        }
+      } catch (err) {
+        backendConectado = false;
+        statusDot.className = 'status-dot';
+        statusText.innerHTML = `<strong>Aviso:</strong> No se pudo conectar a Google Sheets. Mostrando catálogo oficial en modo demostración.`;
+      }
+    }
+
+    function sincronizarCatalogoServidor(catalogoServidor) {
+      catalogoActual = CATALOGO_OFICIAL.map(localItem => {
+        const itemServidor = catalogoServidor.find(s => s.id_variante === localItem.id_variante);
+        if (itemServidor) {
+          return {
+            ...localItem,
+            precio: Number(itemServidor.precio) || localItem.precio,
+            stock_disponible: itemServidor.stock_disponible !== undefined ? itemServidor.stock_disponible : itemServidor.stock_fisico,
+            stock_fisico: itemServidor.stock_fisico,
+            stock_reservado: itemServidor.stock_reservado,
+            imagen_url: itemServidor.imagen_url || ''
+          };
+        }
+        return localItem;
+      });
+    }
+
+    /**
+     * ========================================================
+     * ILUSTRACIONES VECTORIALES NEUTRALES (SVG)
+     * ========================================================
+     */
+    function generarSvgIlustracion(tipo, variante, categoria) {
+      if (categoria === 'Clickers') {
+        return `
+          <svg viewBox="0 0 160 160" width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="25" y="35" width="110" height="90" rx="28" fill="#FFF8D6" stroke="#FFCC00" stroke-width="4"/>
+            <circle cx="80" cy="80" r="32" fill="#FFCC00"/>
+            <circle cx="80" cy="80" r="24" fill="#FFFFFF" fill-opacity="0.8"/>
+            <text x="80" y="86" text-anchor="middle" font-size="14" font-weight="900" fill="#000">${variante}</text>
+            <path d="M55 25 Q 80 18 105 25" stroke="#FFCC00" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        `;
+      } else if (categoria === 'Cordones') {
+        return `
+          <svg viewBox="0 0 160 160" width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="80" cy="80" r="60" fill="#FCE7F3" stroke="#F472B6" stroke-width="3"/>
+            <path d="M45 55 C 65 35, 95 35, 115 55 C 135 75, 135 105, 115 125 C 95 145, 65 145, 45 125 C 25 105, 25 75, 45 55 Z" stroke="#BE185D" stroke-width="4" stroke-dasharray="6 4"/>
+            <circle cx="80" cy="80" r="16" fill="#F472B6"/>
+            <text x="80" y="84" text-anchor="middle" font-size="11" font-weight="800" fill="#FFF">${variante}</text>
+          </svg>
+        `;
+      } else {
+        // Charms
+        return `
+          <svg viewBox="0 0 160 160" width="120" height="120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="30" y="30" width="100" height="100" rx="20" fill="#F3E8FF" stroke="#C084FC" stroke-width="3"/>
+            <path d="M80 45 L90 70 L115 72 L95 90 L102 115 L80 100 L58 115 L65 90 L45 72 L70 70 Z" fill="#9333EA"/>
+            <text x="80" y="142" text-anchor="middle" font-size="11" font-weight="800" fill="#6B21A8">${variante}</text>
+          </svg>
+        `;
+      }
+    }
+
+    /**
+     * ========================================================
+     * RENDERIZADO DEL CATÁLOGO
+     * ========================================================
+     */
+    function renderizarCatalogo() {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = '';
+
+      const itemsFiltrados = categoriaFiltro === 'todos'
+        ? catalogoActual
+        : catalogoActual.filter(item => item.categoria.toLowerCase() === categoriaFiltro.toLowerCase());
+
+      itemsFiltrados.forEach(prod => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.setAttribute('data-id', prod.id_variante);
+
+        // Determinación de etiqueta de categoría
+        let tagClass = 'tag-clickers';
+        if (prod.categoria === 'Cordones') tagClass = 'tag-cordones';
+        if (prod.categoria === 'Charms') tagClass = 'tag-charms';
+
+        // Determinación del estado de stock
+        let stockHtml = '';
+        let disableAdd = false;
+
+        if (backendConectado) {
+          const disp = prod.stock_disponible !== undefined ? prod.stock_disponible : prod.stock_fisico;
+          if (disp <= 0) {
+            stockHtml = `<span class="product-stock-status stock-out"><span class="stock-dot-status"></span>Agotado temporalmente</span>`;
+            disableAdd = true;
+          } else {
+            stockHtml = `<span class="product-stock-status stock-available"><span class="stock-dot-status"></span>${disp} unidades disponibles</span>`;
+          }
+        } else {
+          // Requerimiento: Si no se ha conectado el inventario, mostrar “Stock de demostración” o “Disponibilidad por confirmar”.
+          stockHtml = `<span class="product-stock-status stock-demo"><span class="stock-dot-status"></span>Disponibilidad por confirmar (Demo)</span>`;
+        }
+
+        // Imagen o ilustración SVG
+        let visualHtml = '';
+        if (prod.imagen_url && prod.imagen_url.trim() !== '') {
+          visualHtml = `<img src="${prod.imagen_url}" alt="${prod.producto}" loading="lazy" onerror="this.outerHTML=generarSvgIlustracion('${prod.icono_svg}', '${prod.variante}', '${prod.categoria}')">`;
+        } else {
+          visualHtml = `<div class="product-svg-illustration">${generarSvgIlustracion(prod.icono_svg, prod.variante, prod.categoria)}</div>`;
+        }
+
+        // Subtítulo con tipo de nudo o identificador
+        let labelVariante = '';
+        if (prod.categoria === 'Cordones') {
+          labelVariante = `Tipo de nudo: ${prod.variante}`;
+        } else if (prod.categoria === 'Clickers') {
+          labelVariante = `Dimensión: ${prod.variante}`;
+        } else {
+          labelVariante = `Identificador: ${prod.variante}`;
+        }
+
+        card.innerHTML = `
+          <div class="product-visual-wrap">
+            <span class="product-category-tag ${tagClass}">${prod.categoria}</span>
+            ${visualHtml}
+          </div>
+          <div class="product-content">
+            <h3 class="product-title">${prod.producto}</h3>
+            <span class="product-variant-badge">${labelVariante}</span>
+            <p class="product-desc">${prod.descripcion}</p>
+            
+            <div class="product-meta-row">
+              <span class="product-price-label">Precio Unitario</span>
+              <span class="product-price">S/ ${prod.precio.toFixed(2)}</span>
+            </div>
+
+            ${stockHtml}
+
+            <div class="product-actions">
+              <div class="qty-picker">
+                <button class="qty-btn" onclick="ajustarInputQty('${prod.id_variante}', -1)" aria-label="Disminuir">-</button>
+                <input type="number" id="qty-${prod.id_variante}" class="qty-input" value="1" min="1" max="99" readonly>
+                <button class="qty-btn" onclick="ajustarInputQty('${prod.id_variante}', 1)" aria-label="Aumentar">+</button>
+              </div>
+              <button class="btn-add-cart" id="btnAdd-${prod.id_variante}" onclick="agregarAlCarrito('${prod.id_variante}')" ${disableAdd ? 'disabled' : ''}>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                <span>Agregar</span>
+              </button>
+            </div>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function filtrarCategoria(cat) {
+      categoriaFiltro = cat;
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      const activeBtn = document.getElementById(`tab-${cat}`);
+      if (activeBtn) activeBtn.classList.add('active');
+      renderizarCatalogo();
+    }
+
+    function ajustarInputQty(id, delta) {
+      const input = document.getElementById(`qty-${id}`);
+      if (!input) return;
+      let val = parseInt(input.value, 10) || 1;
+      val = Math.max(1, Math.min(99, val + delta));
+      input.value = val;
+    }
+
+    /**
+     * ========================================================
+     * GESTIÓN DEL CARRITO DE COMPRAS Y CÁLCULOS
+     * ========================================================
+     */
+    function agregarAlCarrito(id_variante) {
+      const prod = catalogoActual.find(p => p.id_variante === id_variante);
+      if (!prod) return;
+
+      const qtyInput = document.getElementById(`qty-${id_variante}`);
+      const cant = qtyInput ? (parseInt(qtyInput.value, 10) || 1) : 1;
+
+      if (!carrito[id_variante]) {
+        carrito[id_variante] = {
+          producto: prod,
+          cantidad: 0
+        };
+      }
+
+      carrito[id_variante].cantidad += cant;
+      if (qtyInput) qtyInput.value = 1;
+
+      actualizarCarritoUI();
+      mostrarToast(`Agregaste ${cant} ${prod.producto} (${prod.variante})`);
+    }
+
+    function modificarCantidadCarrito(id_variante, delta) {
+      if (!carrito[id_variante]) return;
+      carrito[id_variante].cantidad += delta;
+      if (carrito[id_variante].cantidad <= 0) {
+        delete carrito[id_variante];
+      }
+      actualizarCarritoUI();
+    }
+
+    function eliminarDelCarrito(id_variante) {
+      if (carrito[id_variante]) {
+        delete carrito[id_variante];
+        actualizarCarritoUI();
+      }
+    }
+
+    function vaciarCarrito() {
+      carrito = {};
+      actualizarCarritoUI();
+    }
+
+    /**
+     * FÓRMULAS OFICIALES:
+     * Subtotal por producto = precio unitario × cantidad.
+     * Total = suma de los subtotales de todos los artículos.
+     */
+    function calcularTotales() {
+      let totalArticulos = 0;
+      let importeTotal = 0;
+
+      for (const id in carrito) {
+        const it = carrito[id];
+        const subtotal = Math.round(it.producto.precio * it.cantidad * 100) / 100;
+        it.subtotal = subtotal;
+        totalArticulos += it.cantidad;
+        importeTotal += subtotal;
+      }
+
+      importeTotal = Math.round(importeTotal * 100) / 100;
+      return { totalArticulos, importeTotal };
+    }
+
+    function actualizarCarritoUI() {
+      const { totalArticulos, importeTotal } = calcularTotales();
+
+      // Badge en el encabezado
+      document.getElementById('cartBadgeCount').innerText = totalArticulos;
+
+      // Lista dentro del drawer
+      const listContainer = document.getElementById('cartItemsList');
+      const checkoutSection = document.getElementById('checkoutSection');
+      const btnConfirmar = document.getElementById('btnConfirmarPedido');
+      const summaryItems = document.getElementById('summaryTotalItems');
+      const summaryTotal = document.getElementById('summaryTotalAmount');
+
+      summaryItems.innerText = `${totalArticulos} unidad${totalArticulos === 1 ? '' : 'es'}`;
+      summaryTotal.innerText = `S/ ${importeTotal.toFixed(2)}`;
+
+      if (totalArticulos === 0) {
+        listContainer.innerHTML = `
+          <div class="cart-empty-state">
+            <div class="cart-empty-icon">🛒</div>
+            <h4 style="font-weight: 800; margin-bottom: 6px;">Tu carrito está vacío</h4>
+            <p style="font-size: 0.88rem;">Explora nuestros clickers, cordones decorativos y charms y agrégalos para armar tu combinación.</p>
+          </div>
+        `;
+        checkoutSection.style.display = 'none';
+        btnConfirmar.disabled = true;
+        return;
+      }
+
+      checkoutSection.style.display = 'block';
+      btnConfirmar.disabled = false;
+      listContainer.innerHTML = '';
+
+      for (const id in carrito) {
+        const itemObj = carrito[id];
+        const p = itemObj.producto;
+
+        const row = document.createElement('div');
+        row.className = 'cart-item';
+        row.innerHTML = `
+          <div class="cart-item-img">
+            ${generarSvgMiniatura(p.categoria)}
+          </div>
+          <div class="cart-item-info">
+            <div class="cart-item-name">${p.producto}</div>
+            <div class="cart-item-variant">${p.categoria === 'Cordones' ? 'Nudo: ' : ''}${p.variante}</div>
+            <div class="cart-item-price-unit">S/ ${p.precio.toFixed(2)} c/u</div>
+          </div>
+          <div class="cart-item-actions">
+            <div class="cart-item-subtotal">S/ ${itemObj.subtotal.toFixed(2)}</div>
+            <div class="qty-picker" style="height: 28px;">
+              <button class="qty-btn" style="height: 28px; width: 24px;" onclick="modificarCantidadCarrito('${p.id_variante}', -1)">-</button>
+              <span style="font-weight: 700; font-size: 0.85rem; padding: 0 6px;">${itemObj.cantidad}</span>
+              <button class="qty-btn" style="height: 28px; width: 24px;" onclick="modificarCantidadCarrito('${p.id_variante}', 1)">+</button>
+            </div>
+            <button class="btn-remove-item" onclick="eliminarDelCarrito('${p.id_variante}')">Eliminar</button>
+          </div>
+        `;
+        listContainer.appendChild(row);
+      }
+    }
+
+    function generarSvgMiniatura(cat) {
+      if (cat === 'Clickers') return '🟡';
+      if (cat === 'Cordones') return '🎀';
+      return '⭐';
+    }
+
+    function abrirCarrito() {
+      document.getElementById('cartOverlay').classList.add('open');
+      document.getElementById('cartDrawer').classList.add('open');
+    }
+
+    function cerrarCarrito() {
+      document.getElementById('cartOverlay').classList.remove('open');
+      document.getElementById('cartDrawer').classList.remove('open');
+    }
+
+    /**
+     * ========================================================
+     * EJEMPLO DE CÁLCULO PARA VALIDAR LA IMPLEMENTACIÓN
+     * 1 clicker tamaño 2: S/ 8.00
+     * 2 cordones nudo simple Snake: S/ 6.00
+     * 1 cordón nudo complejo Mariposa: S/ 3.50
+     * 2 charms modelo 1: S/ 3.00
+     * 1 charm modelo 2: S/ 2.00
+     * Total = S/ 22.50
+     * ========================================================
+     */
+    function probarCalculoEjemplo() {
+      carrito = {};
+      const add = (sku, cant) => {
+        const prod = catalogoActual.find(p => p.id_variante === sku);
+        if (prod) {
+          carrito[sku] = { producto: prod, cantidad: cant };
+        }
+      };
+
+      add('CLK-T2', 1);       // S/ 8.00
+      add('CRD-SMP-SNK', 2);   // S/ 6.00
+      add('CRD-CMP-MRP', 1);   // S/ 3.50
+      add('CHM-M1', 2);        // S/ 3.00
+      add('CHM-M2', 1);        // S/ 2.00
+
+      actualizarCarritoUI();
+      abrirCarrito();
+      mostrarToast('Ejemplo oficial cargado: Total S/ 22.50');
+    }
+
+    /**
+     * ========================================================
+     * CONFIRMACIÓN Y CREACIÓN DE RESERVA TEMPORAL
+     * ========================================================
+     */
+    async function ejecutarReserva() {
+      const { totalArticulos, importeTotal } = calcularTotales();
+      if (totalArticulos === 0) {
+        alert('Por favor agrega al menos un artículo a tu pedido.');
+        return;
+      }
+
+      const inputNombre = document.getElementById('clienteNombre');
+      const inputTelefono = document.getElementById('clienteTelefono');
+      const inputObs = document.getElementById('clienteObservaciones');
+      const checkTerminos = document.getElementById('checkTerminos');
+
+      const nombre = inputNombre.value.trim();
+      const telefono = inputTelefono.value.replace(/\D/g, '');
+      const observaciones = inputObs.value.trim();
+
+      if (!nombre || nombre.length < 3) {
+        alert('Por favor ingresa tu nombre completo.');
+        inputNombre.focus();
+        return;
+      }
+
+      if (!telefono || telefono.length < 9) {
+        alert('Por favor ingresa un número de celular de WhatsApp válido (mínimo 9 dígitos).');
+        inputTelefono.focus();
+        return;
+      }
+
+      if (!checkTerminos.checked) {
+        alert('Debes aceptar las condiciones de reserva temporal y el aviso de privacidad.');
+        checkTerminos.focus();
+        return;
+      }
+
+      const btnConfirmar = document.getElementById('btnConfirmarPedido');
+      btnConfirmar.disabled = true;
+      btnConfirmar.innerHTML = '<span>Procesando reserva...</span>';
+
+      // Estructurar ítems para enviar al servidor
+      const itemsPayload = [];
+      for (const id in carrito) {
+        itemsPayload.push({
+          id_variante: id,
+          cantidad: carrito[id].cantidad
+        });
+      }
+
+      const datosPedido = {
+        action: 'createReservation',
+        nombre_cliente: nombre,
+        telefono_cliente: telefono,
+        observaciones: observaciones,
+        items: itemsPayload
+      };
+
+      // Si el backend está configurado, enviar la reserva a Google Apps Script
+      if (backendConectado && backendUrlActiva) {
+        try {
+          // Se utiliza POST con texto plano para evitar bloqueos por CORS en Google Apps Script
+          const resp = await fetch(backendUrlActiva, {
+            method: 'POST',
+            body: JSON.stringify(datosPedido)
+          });
+          const resultado = await resp.json();
+
+          if (resultado.success) {
+            mostrarModalExito(resultado);
+            vaciarCarrito();
+            cerrarCarrito();
+          } else {
+            alert('Atención al procesar la reserva:\n\n' + (resultado.message || 'No se pudo completar la reserva.'));
+          }
+        } catch (e) {
+          // Si el POST directo es bloqueado por políticas del navegador, intentar fallback GET
+          try {
+            const getUrl = `${backendUrlActiva}?action=createReservation&data=${encodeURIComponent(JSON.stringify(datosPedido))}`;
+            const respGet = await fetch(getUrl);
+            const resultadoGet = await respGet.json();
+
+            if (resultadoGet.success) {
+              mostrarModalExito(resultadoGet);
+              vaciarCarrito();
+              cerrarCarrito();
+            } else {
+              alert('Error al reservar:\n' + resultadoGet.message);
+            }
+          } catch (errFallback) {
+            alert('No se pudo comunicar con el servidor de Google Sheets. Verifica la conexión o la URL configurada.');
+          }
+        } finally {
+          btnConfirmar.disabled = false;
+          btnConfirmar.innerHTML = '<span>Confirmar y Reservar Stock</span>';
+        }
+      } else {
+        // MODO DEMOSTRACIÓN (Backend no vinculado aún)
+        // Regla: No simular que se reservó stock real. Mostrar aviso claro y permitir generar el WhatsApp con los datos oficiales.
+        const codigoDemo = 'CLK-' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        const ahora = new Date();
+        const vencimiento = new Date(ahora.getTime() + DURACION_RESERVA_MINUTOS * 60 * 1000);
+        const vencimientoStr = vencimiento.toLocaleTimeString('es-PE', { hour: '2-digit', minute: '2-digit' });
+
+        // Construir detalle
+        const detalleDemo = [];
+        for (const id in carrito) {
+          const item = carrito[id];
+          detalleDemo.push({
+            producto: item.producto.producto,
+            variante: item.producto.variante,
+            cantidad: item.cantidad,
+            precio_unitario: item.producto.precio,
+            subtotal: item.subtotal
+          });
+        }
+
+        const textoWa = construirTextoWhatsAppOficial({
+          codigo_pedido: codigoDemo,
+          nombre_cliente: nombre,
+          telefono_cliente: telefono,
+          detalle: detalleDemo,
+          observaciones: observaciones,
+          total: importeTotal,
+          fecha_vencimiento_str: vencimientoStr
+        });
+
+        const urlWa = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(textoWa)}`;
+
+        mostrarModalExito({
+          codigo_pedido: codigoDemo,
+          importe_total: importeTotal,
+          detalle: detalleDemo,
+          whatsapp_url: urlWa,
+          duracion_minutos: DURACION_RESERVA_MINUTOS,
+          es_demo: true
+        });
+
+        vaciarCarrito();
+        cerrarCarrito();
+        btnConfirmar.disabled = false;
+        btnConfirmar.innerHTML = '<span>Confirmar y Reservar Stock</span>';
+      }
+    }
+
+    /**
+     * ========================================================
+     * PLANTILLA OBLIGATORIA DEL MENSAJE DE WHATSAPP
+     * ========================================================
+     */
+    function construirTextoWhatsAppOficial(datos) {
+      let lineas = [];
+      lineas.push('Hola, Cliky. Quiero coordinar el pago de mi pedido.');
+      lineas.push(`Código del pedido: ${datos.codigo_pedido}`);
+      lineas.push(`Nombre: ${datos.nombre_cliente}`);
+      lineas.push(`Celular: ${datos.telefono_cliente}`);
+      lineas.push('DETALLE:');
+
+      datos.detalle.forEach(it => {
+        lineas.push(it.producto);
+        lineas.push(`Variante: ${it.variante}`);
+        lineas.push(`Cantidad: ${it.cantidad}`);
+        lineas.push(`Precio unitario: S/ ${it.precio_unitario.toFixed(2)}`);
+        lineas.push(`Subtotal: S/ ${it.subtotal.toFixed(2)}`);
+      });
+
+      lineas.push(`Indicaciones adicionales: ${datos.observaciones || 'Ninguna'}`);
+      lineas.push(`TOTAL: S/ ${datos.total.toFixed(2)}`);
+      lineas.push('Estado: pendiente de pago.');
+      lineas.push(`Reserva válida hasta: ${datos.fecha_vencimiento_str}.`);
+      lineas.push('Por favor, indíquenme cómo realizar el pago y coordinar la entrega.');
+
+      return lineas.join('\n');
+    }
+
+    /**
+     * ========================================================
+     * MODAL DE ÉXITO Y TEMPORIZADOR DE 15 MINUTOS
+     * ========================================================
+     */
+    function mostrarModalExito(resultado) {
+      document.getElementById('modalCodigoPedido').innerText = resultado.codigo_pedido;
+      document.getElementById('modalTotalAmount').innerText = `S/ ${resultado.importe_total.toFixed(2)}`;
+
+      const breakdownDiv = document.getElementById('modalItemsBreakdown');
+      breakdownDiv.innerHTML = '';
+
+      resultado.detalle.forEach(it => {
+        const row = document.createElement('div');
+        row.className = 'order-breakdown-item';
+        row.innerHTML = `
+          <span>${it.cantidad}x ${it.producto} (${it.variante})</span>
+          <span>S/ ${it.subtotal.toFixed(2)}</span>
+        `;
+        breakdownDiv.appendChild(row);
+      });
+
+      const btnWa = document.getElementById('modalBtnWhatsApp');
+      btnWa.href = resultado.whatsapp_url;
+
+      // Iniciar cuenta regresiva de 15 minutos
+      iniciarTemporizadorReserva(resultado.duracion_minutos || DURACION_RESERVA_MINUTOS);
+
+      document.getElementById('orderModal').classList.add('open');
+    }
+
+    function iniciarTemporizadorReserva(minutos) {
+      if (countdownInterval) clearInterval(countdownInterval);
+
+      let segundosRestantes = minutos * 60;
+      const timerEl = document.getElementById('modalTimerCountdown');
+
+      const updateUI = () => {
+        const m = Math.floor(segundosRestantes / 60);
+        const s = segundosRestantes % 60;
+        timerEl.innerText = `Válida por ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')} min`;
+
+        if (segundosRestantes <= 0) {
+          clearInterval(countdownInterval);
+          timerEl.innerText = 'Reserva expirada';
+          timerEl.style.color = '#EF4444';
+          document.getElementById('modalEstadoText').innerText = 'VENCIDO';
+          document.getElementById('modalEstadoText').style.color = '#EF4444';
+        }
+        segundosRestantes--;
+      };
+
+      updateUI();
+      countdownInterval = setInterval(updateUI, 1000);
+    }
+
+    function cerrarModalPedido() {
+      document.getElementById('orderModal').classList.remove('open');
+      if (countdownInterval) clearInterval(countdownInterval);
+    }
+
+    /**
+     * ========================================================
+     * MODAL DE CONFIGURACIÓN DE BACKEND
+     * ========================================================
+     */
+    function abrirModalConfig() {
+      document.getElementById('inputBackendUrl').value = backendUrlActiva;
+      document.getElementById('configModal').classList.add('open');
+    }
+
+    function cerrarModalConfig() {
+      document.getElementById('configModal').classList.remove('open');
+    }
+
+    function guardarUrlBackend() {
+      const val = document.getElementById('inputBackendUrl').value.trim();
+      if (!val) {
+        alert('Por favor ingresa una URL válida.');
+        return;
+      }
+      backendUrlActiva = val;
+      localStorage.setItem('cliky_backend_url', val);
+      cerrarModalConfig();
+      mostrarToast('URL guardada. Probando conexión...');
+      verificarConexionBackend();
+    }
+
+    function restablecerModoDemo() {
+      localStorage.removeItem('cliky_backend_url');
+      backendUrlActiva = "";
+      cerrarModalConfig();
+      verificarConexionBackend();
+      mostrarToast('Modo demostración activado');
+    }
+
+    /**
+     * ========================================================
+     * UTILIDADES (TOAST)
+     * ========================================================
+     */
+    function mostrarToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2800);
+    }
+  </script>
+</body>
+</html>
